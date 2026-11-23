@@ -1,0 +1,9 @@
+tag,keywords,resolver_team
+Integration Failure,sync|integration|connector|api|e-signature|failed to send,Integrations Engineering
+Performance / Slowness,slow|spinning|timing out|lagging|unusable,Platform Engineering
+Workflow Stuck / Approval,stuck|approval|not moving|pending|workflow,Application Support
+Data / Record Error,wrong amount|duplicate|missing|look off|does not match|mismatch,Application Support
+Access & Permissions,access|permission|locked|role|sso,Identity & Access
+Report / Dashboard,report|dashboard|export,Data & Analytics
+Change Request,add a field|new option|enhancement|change request,Application Development
+How-to / Training,how do i|training|walkthrough,Service Desk
