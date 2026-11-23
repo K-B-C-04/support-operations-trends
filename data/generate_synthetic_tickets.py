@@ -1,7 +1,8 @@
 """
 Generate a synthetic support-operations ticket dataset.
 
-Every app, team, number and ticket here is invented. No real company data is used.
+Every app, team, number and ticket here is invented for Wazobia Corp, a fictional company.
+No real company data is used.
 
 Tickets come from business departments (Legal, Finance, HR, Sales, Operations,
 Engineering) about the internal applications they rely on. Each ticket has a title
