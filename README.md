@@ -2,6 +2,8 @@
 
 **Finding the blockers behind support tickets, tracing them to their source, and getting them to the team that can fix them.**
 
+**[View the findings page](https://k-b-c-04.github.io/support-operations-trends/)**
+
 Business units (Legal, Finance, HR, Sales, Operations, Engineering) raise support tickets about the internal applications they depend on. Individually, each ticket is noise. Together, they show what's breaking, where it starts, and how much downtime it costs. This project turns that ticket stream into a decision tool:
 
 1. **Detect** what's trending: keywords in ticket titles and descriptions, tracked over a rolling time window.

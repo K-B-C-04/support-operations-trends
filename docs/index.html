@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Operations Trends | Wazobia Corp demo</title>
+<meta name="description" content="Findings from a support-ticket trend analysis for Wazobia Corp, a fictional company, on synthetic data.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--surface:#fff;--ink:#111827;--muted:#5b6472;--line:#e5e7eb;--accent:#4338ca;--accent-soft:#eef2ff;--alert:#dc2626;--alert-soft:#fef2f2;--warn-soft:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 24px 56px}
+.banner{background:var(--warn-soft);border:1px solid #fde68a;color:#78350f;border-radius:10px;padding:8px 12px;font-size:12.5px;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-.02em;margin:0 0 10px}
+.lede{color:var(--muted);font-size:17px;max-width:760px;margin:0 0 24px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font-size:24px;letter-spacing:-.01em}
+.kpi span{font-size:13px;color:var(--muted);line-height:1.4;display:block}
+.finding{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:16px}
+.finding .num{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.finding h2{font-size:21px;margin:4px 0 8px;letter-spacing:-.01em}
+.finding p{margin:0 0 10px;color:#374151}
+.finding img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;margin-top:8px;background:#fff}
+.action{background:var(--accent-soft);border-radius:10px;padding:10px 14px;font-size:15px;margin-top:12px}
+.action b{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.tablebox{overflow-x:auto}
+.how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:10px}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+.step b{display:block;font-size:15px;margin-bottom:2px}
+footer{margin-top:28px;font-size:14px;color:var(--muted)}
+@media (max-width:760px){.kpis,.how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="banner"><strong>Demo:</strong> Wazobia Corp is a fictional company. Every application, team, ticket and figure is synthetic.</div>
+  <h1>Support Operations Trends</h1>
+  <p class="lede">1,886 support tickets from six business units, read together instead of one at a time. The analysis finds what is trending, traces it to its source and routes it to the team that can fix it.</p>
+
+  <div class="kpis">
+    <div class="kpi"><b>5.0×</b><span>expected rate for duplicate invoices in the last 30 days</span></div>
+    <div class="kpi"><b>1,528</b><span>contract records left unsent by one release</span></div>
+    <div class="kpi"><b>33%</b><span>of tickets assigned to the wrong team first</span></div>
+    <div class="kpi"><b>~5,200 hrs</b><span>of downtime traced to misrouting</span></div>
+  </div>
+
+  <section class="finding">
+    <span class="num">Finding 1</span>
+    <h2>Two issues are trending right now</h2>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>Issue</th><th>Signal</th><th>Impact</th><th>Route to</th></tr></thead>
+        <tbody>
+          <tr><td><b>Invoice Center: duplicate invoice records</b></td><td>5.0× expected in the last 30 days, still climbing</td><td>285 vendor records, double-payment risk</td><td>Finance + Application Support</td></tr>
+          <tr><td><b>People Portal: enrollment approvals stuck</b></td><td>3.6× expected, reported by all 6 departments</td><td>Employees blocked before the enrollment deadline</td><td>HR + Application Support</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <img src="img/trending_issues.png" alt="Chart of application and issue pairs by how far their last-30-day ticket volume exceeds the expected rate" loading="lazy">
+    <p style="margin-top:14px">The keyword view catches the same signals straight from ticket text, before anyone categorizes anything: <i>enrollment</i> ran at 19× its usual rate.</p>
+    <img style="max-width:620px;display:block" src="img/trending_keywords.png" alt="Chart of keywords whose frequency in ticket text surged in the last 30 days" loading="lazy">
+  </section>
+
+  <section class="finding">
+    <span class="num">Finding 2</span>
+    <h2>One release caused most of the year's record damage</h2>
+    <p>A June release broke Contract Hub's e-signature connector. Over eight weeks it generated 49 tickets, left 1,528 contract records unsent and cost about 1,260 hours of downtime. 82% of those tickets bounced between teams before reaching Integrations Engineering.</p>
+    <img src="img/app_health.png" alt="Application health chart showing tickets, records impacted and downtime by application" loading="lazy">
+    <div class="action"><b>Action:</b> regression tests on connectors before each release, and keyword routing that sends e-signature, sync and integration tickets straight to Integrations Engineering.</div>
+  </section>
+
+  <section class="finding">
+    <span class="num">Finding 3</span>
+    <h2>Six departments, one source</h2>
+    <p>Expense Portal slowness is reported by every department, so it looks company-wide. But 65% of those tickets land on day 25 or later: it is one application buckling under month-end load.</p>
+    <img src="img/triangulation.png" alt="Chart showing Expense Portal slowness tickets concentrated in the last days of each month" loading="lazy">
+    <div class="action"><b>Action:</b> Platform Engineering scales capacity for the last week of each month, and Finance gives submitters a heads-up.</div>
+  </section>
+
+  <section class="finding">
+    <span class="num">Finding 4</span>
+    <h2>Handoffs are the hidden downtime cost</h2>
+    <p>33% of tickets went to the wrong team first. Each reassignment adds about 1 to 2.5 days to resolution, and about 5,200 hours of downtime trace back to misrouting. Integration failures are the worst case: 73% of Legal's were reassigned.</p>
+    <img src="img/routing.png" alt="Chart comparing resolution time for tickets routed directly versus reassigned" loading="lazy">
+    <div class="action"><b>Action:</b> map every tag to its resolving team, so tagging doubles as routing.</div>
+  </section>
+
+  <section class="finding">
+    <span class="num">Finding 5</span>
+    <h2>What Legal, Finance and HR each need</h2>
+    <p>Legal carries the heaviest load (598 tickets), led by data errors and Contract Hub integration failures. Finance data errors take a median 2.6 days, and 46% are reassigned first. HR is dominated by stuck approvals in People Portal.</p>
+    <img src="img/department_resolution.png" alt="Heatmap of median resolution time by department and issue type" loading="lazy">
+  </section>
+
+  <section class="finding">
+    <span class="num">Method</span>
+    <h2>How it works</h2>
+    <p>Keyword rules tag 89% of tickets at 94.5% accuracy. Only vague tickets go to Gemini, which must choose from a fixed tag list. Each application and tag pair is compared with its own baseline, and flagged at 3× expected volume with at least 8 tickets.</p>
+    <div class="how">
+      <div class="step"><b>Detect</b>Trending keywords over a rolling 30-day window</div>
+      <div class="step"><b>Group</b>Tags from keyword rules first, an LLM for the rest</div>
+      <div class="step"><b>Triangulate</b>Which app, which release, which time of month</div>
+      <div class="step"><b>Route</b>Each issue to the team that can resolve it</div>
+    </div>
+  </section>
+
+  <footer>Built with Google Apps Script, Google Sheets, Gemini, SQL and Python. <a href="https://github.com/K-B-C-04/support-operations-trends">Code and method on GitHub</a> · <a href="https://k-b-c-04.github.io/Kamsi-Resume/">Kamsi Ben Chiobi</a></footer>
+</main>
+</body>
+</html>
